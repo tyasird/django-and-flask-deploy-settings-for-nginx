@@ -158,7 +158,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 #### gunicorn.conf (no need)
 
 ```
-gunicorn -c gc.py wsgi:app &
+gunicorn -c gc.py config.wsgi
 ```
 
 ```
