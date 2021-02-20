@@ -120,6 +120,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 #### gunicorn.conf (no need)
 
 ```
+gunicorn -c gc.py wsgi:app &
+```
+
+```
 command = '/var/www/dcna/env/bin/gunicorn'
 pythonpath = '/var/www/dcna/env/bin'
 #bind = ['159.65.204.133:8000']
@@ -133,4 +137,3 @@ log_level = 'info'
 ```
 
 
-zip -r backup.zip . -x "env/*"
