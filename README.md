@@ -81,6 +81,20 @@ server {
 ```
 
 
+#### domain.conf 
+```
+server {
+	listen 80;
+	server_name computationalbiology.org www.computationalbiology.org;
+	root /var/www/cbl;
+
+	location / {
+	   try_files $uri $uri/ =404;
+	}
+}
+```
+
+
 #### uWsgi
 
 ```
