@@ -15,7 +15,7 @@ sudo ln -s /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled/
 sudo systemctl restart nginx
 ```
 
-#### example.com conf
+#### django.com conf
 
 ```
 upstream django {
@@ -56,6 +56,30 @@ server {
 }
 
 ```
+
+#### flask.com conf
+
+```
+server {
+	listen 80;
+	server_name 159.65.204.133;
+	client_max_body_size 100M;
+
+
+	location /flask {
+		alias /var/www/flask;
+		proxy_pass http://159.65.204.133:5000;
+	}
+
+	location /ml_train {
+		alias /var/www/ml_train;
+		proxy_pass http://159.65.204.133:4000;
+	}
+	
+}
+
+```
+
 
 #### uWsgi
 
