@@ -161,6 +161,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 gunicorn -c gc.py config.wsgi
 ```
 
+django
+
 ```
 command = '/var/www/dcna/env/bin/gunicorn'
 pythonpath = '/var/www/dcna/env/bin'
@@ -174,4 +176,20 @@ worker_class = 'gevent'
 log_level = 'info'
 ```
 
+flask
+```
+command = '/var/www/flask/env/bin/gunicorn'
+pythonpath = '/var/www/flask'
+bind = '159.65.204.133:5000'
+#bind = '127.0.0.1:6666'
+#bind = 'unix:/var/www/flask/myproject.sock'
+workers =3
+accesslog ='/var/www/flask/logs/access.log'
+errorlog ='/var/www/flask/logs/error.log'
+timeout=900
+log_level = 'debug'
+#umask = '0'
+#group = 'root'
+#user ='root'
+```
 
